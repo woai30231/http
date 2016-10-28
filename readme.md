@@ -28,4 +28,6 @@
 
 ### *[第五章 web服务器](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E4%BA%94%E7%AB%A0%20web%E6%9C%8D%E5%8A%A1%E5%99%A8)*
 
-### *[第六章 代理]()*
+### *[第六章 代理](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E4%BB%A3%E7%90%86)*
+
+### *[第七章 缓存]()*
