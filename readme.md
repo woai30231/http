@@ -32,4 +32,4 @@
 
 ### *[第七章 缓存](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E7%BC%93%E5%AD%98)*
 
-### *[第八章 集成点：网关、隧道及中继]()*
+### *[第八章 集成点：网关、隧道及中继](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E9%9B%86%E6%88%90%E7%82%B9%EF%BC%9A%E7%BD%91%E5%85%B3%E3%80%81%E9%9A%A7%E9%81%93%E5%8F%8A%E4%B8%AD%E7%BB%A7)*
