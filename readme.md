@@ -36,4 +36,6 @@
 
 ### *[第九章 Web机器人](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E4%B9%9D%E7%AB%A0%20Web%E6%9C%BA%E5%99%A8%E4%BA%BA)*
 
-### *[第十章 HTTP-NG]()*
+### *[第十章 HTTP-NG](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E7%AB%A0%20HTTP-NG)*
+
+### *[第十一章 客户端识别与Cookie机制]()*
