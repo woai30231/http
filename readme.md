@@ -41,3 +41,5 @@
 ### *[第十一章 客户端识别与Cookie机制](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%20%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%86%E5%88%AB%E4%B8%8ECookie%E6%9C%BA%E5%88%B6)*
 
 ### *[第十二章 基本认证机制](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%20%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6)*
+
+### *[第十三章 摘要认证]()*
