@@ -47,3 +47,5 @@
 ### *[第十四章 安全HTTP](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%AE%89%E5%85%A8HTTP)*
 
 ### *[第十五章 实体和编码](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0%20%E5%AE%9E%E4%BD%93%E5%92%8C%E7%BC%96%E7%A0%81)*
+
+### *[第十六章 国际化]()*
