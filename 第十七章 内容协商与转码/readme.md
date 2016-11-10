@@ -52,8 +52,13 @@
 
 * Accept首部集和匹配的文档首部集
 
-  || *Accept首部* || *实体首部* ||
-  || Accept || Content-Type ||
-  || Accept-Language || Content-Language ||
-  || Accept-Charset || Content-Type ||
-  || Accept-Encoding || Content-Encoding ||
+```
+				——————————————————————————————————————————
+				*Accept首部*  				*实体首部* 
+				——————————————————————————————————————————
+				Accept  					Content-Type 
+				Accept-Language 			Content-Language 
+				Accept-Charset  			Content-Type 
+				Accept-Encoding  			Content-Encoding 
+
+```  
