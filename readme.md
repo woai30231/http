@@ -56,4 +56,4 @@
 
 ### *[第十九章 发布系统](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%20%E5%8F%91%E5%B8%83%E7%B3%BB%E7%BB%9F)*
 
-### *[第二十章 重定向与负载均衡]()*
+### *[第二十章 重定向与负载均衡](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)*
