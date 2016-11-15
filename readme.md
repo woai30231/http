@@ -54,4 +54,6 @@
 
 ### *[第十八章 Web主机托管](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0%20Web%E4%B8%BB%E6%9C%BA%E6%89%98%E7%AE%A1)*
 
-### *[第十九章 发布系统]()*
+### *[第十九章 发布系统](https://github.com/woai30231/http/tree/master/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%20%E5%8F%91%E5%B8%83%E7%B3%BB%E7%BB%9F)*
+
+### *[第二十章 重定向与负载均衡]()*
