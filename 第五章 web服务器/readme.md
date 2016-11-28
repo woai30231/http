@@ -72,10 +72,78 @@
 
 * 虚拟托管的docroot:在一个服务器上挂了几个web站点，那么这样当请求的资源路径相同时，服务器应该从请求报文首部的host、uri字段找出真正的资源目录，这些目录都是可以配置的！
 
+* 注：这里对用户配置文件根目录和虚拟目录做一下示例说明，以apache为例：
+
+```
+  配置文件根目录
+  在配置文件httpd.conf中添加一个DocumentRoot行就可以为Apache Web服务器设置文档的根目录了，如：
+
+  	DocumentRoot /user/local/httpd/files
+
+
+  配置虚拟目录
+  对大多数Web服务器来说，配置虚拟托管的文档根目录是很简单的。对常见的Apache Web服务器来说，需要为每个虚拟Web
+  站点配置一个VirtualHosts块，而且每个虚拟服务器都要包含DocumentRoot，如：
+
+  <VirtualHost www.joes-hardware.com>
+  	ServerName www.joes-hardware.com
+  	DocumentRoot /docs/joe
+  	TransferLog /logs/joe.access_log
+  	ErrorLog /logs/joe.error_log
+  </VirtualHost>
+
+  <VirtualHost www.marys-antiques.com>
+  	ServerName www.marys-antiques.com
+  	DocumentRoot /docs/mary
+  	TransferLog /logs/mary.access_log
+  	ErrorLog /logs/mary.error_log
+  </VirtualHost>
+
+     ... 
+
+```
 
 #### 第五步————构建响应
 
 * 构建响应报文：1、正确设置响应主体的长度（content-length）；2、设置报文的mime类型（content-type）,主要通过与一直mime类型文件匹配得到当前的文件的mime类型，还可以通过文件扩展名，以及硬规定特定目录下的文件拥有某个mime类型；3、控制重定向！
+
+* 服务器端如何得出文件的MIME类型：
+
+```
+
+	Web服务器要负责确定响应主体的MIME类型。有很多配置服务器的方法可以将MIME类型与资源关联起来。
+
+	1、MIME类型（mime.types）
+	   Web服务器可以用文件的扩展名来说明MIME类型。Web服务器会为每个资源扫描一个包含了所有扩展名的MIME类型的文件，以确定其MIME类型。这种基于扩展名的类型相关是最常见的！
+
+	2、魔法分类（Magic typing）
+	   Apache Web服务器可以扫描每个资源的内容，并将其与一个已知模式表（被称为魔法文件）进行匹配，以决定每个文
+	   件的MIME类型。这样做可能比较慢，但很方便，尤其是文件没有标准扩展名的时候。
+
+	3、显示分类（Explicit typing）
+	   可以对Web服务器进行配置，使其不考虑文件的扩展名或内容，强制特定文件或目录内容拥有某个MIME类型
+
+	4、类型协商
+	   有些Web服务器经过配置，可以以多种文档格式来存储资源。在这种情况下，可以配置Web服务器，使其可以通过与用户的协商来是决定使用哪种格式（及相关的MIME类型）“最好”。
+
+```
+
+
+##### 重定向
+
+* 有时服务器需要返回重定向报文来构建响应，重定向响应由返回码3XX说明。Location响应首部包含了内容的新地址或优选地址的URL。重定向可用于下列情况。
+
+ - - 永久删除的资源，状态码为301
+
+ - - 临时删除的资源，状态码为303或307
+
+ - - URL增强，状态码为303或307
+
+ - - 负载均衡，主要是减少服务器的压力，让请求跑到一个负载不大的服务器上去，状态码为303或307
+
+ - - 服务器关联，去保存有用户本地信息的服务器上获取用户信息，状态码为303或307
+
+ - - 规范目录名称，客户端请求的URI是一个不带尾部斜线的目录名时，大多数Web服务器都会将客户端重定向到一个加了斜线的URI上，这样相对链接就可以正常工作了！
 
 
 ####　第六步————发送响应
