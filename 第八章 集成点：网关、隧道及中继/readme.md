@@ -28,7 +28,7 @@
 
 ####　协议网关
 
-* 协议网关主要描述了几种架构在客户端和服务器端之间的网关，它们两侧使用了不同的协议来达到通信的目的，主要有：HTTP/*（服务器端web网关）、HTTP/HTTPS（服务器端安全网关）、HTTPS/HTTP（客户端安全网关加速器）。这里主要以HTTP/FTP为例讲解一次http请求在经过FTP网关时发生了些什么：
+* 协议网关主要描述了几种架构在客户端和服务器端之间的网关，它们两侧使用了不同的协议来达到通信的目的，主要有：HTTP/*（服务器端web网关）、HTTP/HTTPS（服务器端安全网关）、HTTPS/HTTP（客户端安全网关加速器）。这里主要以HTTP/FTP为例讲解一次http请求在经过FTP网关时网关会去做什么事：
 
 >> 1、发送USER和PASS命令登录到服务器上去；
 
@@ -55,11 +55,21 @@
 
 #### 隧道
 
-* 隧道允许通过http连接发送非http流量，
+* Web隧道允许用户通过HTTP连接发送非HTTP流量，这样就可以在HTTP上捎带其他协议数据了。使用Web隧道最常见的原因就是要在HTTP连接中嵌入HTTP流量，这样，这类流量就可以穿过只允许Web流量通过的防火墙了。
 
-##### 用CONNECT方法建立HTTP隧道
+* Web隧道使用HTTP的CONNECT方法建立起来的。 CONNECT方法并不是HTTP/1.1核心规范的一部分，但却是一种得到广泛应用的扩展。
 
-* CONNECT方法请求隧道网关建立一条到达任意服务器和端口的tcp连接。
+* CONNECT连接：除了起始行之外，CONNECT的语法与其他HTTP方法类似。一个后面跟着冒号和端口号的主机名取代了请求URL.主机和端口都比如指定：
+
+```
+	请求
+	CONNECT home.netscape.com:443 HTTP/1.0
+	User-Agent:Mozilla/4.0
+
+	响应
+	HTTP/1.0 200 Connection Established
+	Proxy-agent:Netscape-Proxy/1.1
+```
 
 #### 中继
 
