@@ -97,7 +97,35 @@
 
 #### cookie版本
 
- * 略
+ * cookie机制有个两个版本，一个是网景公司主导的“版本0”，主要是服务器返回“Set-Cookie”首部，而客户端请求发送“Cookie”首部，客户端发送请求时，会将所有与域、路径和安全过滤器相匹配的未过期cookie都发送给这个站点。所有cookie都被组合到一个Cookie首部中，如：
+
+ ``` 
+ 		Cookie: session-id=002-1145265-8016938; session-id-time=1311313313131
+ ```
+
+ cookie机制还有一个版本就是RFC 2965定义的一个cookie的扩展版本。这个版本1标准引入了Set-Cookie2首部和Cookie2首部，但它也能与“版本0”系统进行互操作。“版本1”跟“版本0”的区别就是，提供了更多的属性来描述一个cookie,同时服务器端发送的是“Set-Cookie”首部，而客户端发送的是“Cookie”首部，如：
+
+ ```
+ 		服务器端
+ 	 	Set-Cookie2: ID="29046"; Domain=".joes-hardware.com"
+ 	 	Set-Cookie2: color=blue
+ 	 	Set-Cookie2: support-pref="L2"; Domain="customer-care.joes-hardware.com"
+ 	 	Set-Cookie2: Coupon="hammer027"; Version="1"; Path="/tools"
+ 	 	Set-Cookie2: Coupon="handvac103"; Version="1";Path="/tools/cordless"
+
+ 	 	客户端
+ 	 	Cookie: $Version="1";
+ 	 			ID="29046"; $Domain=".joes-hardware.com";
+ 	 			color="blue";
+ 	 			Coupon="hammer027"; $Path="/tools";
+ 	 			Coupon="handvac103"; $Path="/tools/cordless"
+ ```
+
+另外Cookie2首部是用来沟通支持版本0和版本1的服务器的，它会发送当前客户端支持的最新版本cookie版本，如：
+
+```
+		Cookie2: $Version="1"
+```
 
 
 
